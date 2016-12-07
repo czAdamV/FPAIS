@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Presenters;
+namespace FPAIS\Presenters;
 
 use Nette;
 
-
-class HomepagePresenter extends Nette\Application\UI\Presenter
-{
+class HomepagePresenter extends Nette\Application\UI\Presenter {
+    
 }
