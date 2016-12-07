@@ -19,10 +19,15 @@ class TrainingPresenter extends \Nette\Application\UI\Presenter {
         $this->template->trainings = $this->trainingManager->getList([]);
     }
 
-    public function actionCreate() {
+    public function createComponentNewTrainingForm(): \Nette\Application\UI\Form {
+        $form = new \Nette\Application\UI\Form();
+        $form->addSubmit('create', 'vytvořit');
+        $form->onSuccess[] = [$this, 'onSubmitNewTraining'];
+        return $form;
+    }
 
-
-        $this->flashMessage("all good");
+    public function onSubmitNewTraining(\Nette\Application\UI\Form $form, $values) {
+        dump($form);
     }
 
 }

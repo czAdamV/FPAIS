@@ -2,6 +2,8 @@
 
 namespace FPAIS\Model\Manager;
 
+use FPAIS\Model;
+
 /**
  * Description of TrainingManager
  *
@@ -21,7 +23,16 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
     }
 
     public function getList(array $filter = []) {
-        $this->trainingDao->findBy([]);
+        $res =  $this->trainingDao->findBy($filter);
+        //convert to BO
+        
+        foreach ($res as $key => $line) {
+            
+        }
+    }
+
+    public function getOneBy(array $filter = []): Model\BusinessObject\Training {
+        return NULL;
     }
 
 }
