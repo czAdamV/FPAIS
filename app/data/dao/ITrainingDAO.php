@@ -10,4 +10,6 @@ interface ITrainingDAO {
     public function findById(int $id): Entity\Training;
 
     public function findBy(array $by): Utils\ArrayList;
+
+    public function findAll(): Utils\ArrayList;
 }

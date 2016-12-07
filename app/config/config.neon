@@ -10,9 +10,14 @@ application:
 session:
 	expiration: 14 days
 
+database:
+	dsn: "sqlite:%appDir%/data.db"
+	user: ...
+	password: ...
 
 services:
 	router: FPAIS\RouterFactory::createRouter
+	trainingManager: FPAIS\Model\Manager\TrainingManager
+	traincsouingDao: FPAIS\Data\SQLDAO\SQLTrainingDAO
 
-database:
-	dsn: "sqlite3:%appDir%/data.db"
+
