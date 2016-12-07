@@ -13,7 +13,7 @@ class SQLTrainingDAO implements \FPAIS\Data\DAO\ITrainingDAO {
      * @var \Nette\Database\Context
      */
     private $database;
-    
+
     /**
      * @var \Nette\Database\Table\Selection
      */

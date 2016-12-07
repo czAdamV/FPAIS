@@ -12,8 +12,6 @@ session:
 
 database:
 	dsn: "sqlite:%appDir%/data.db"
-	user: ...
-	password: ...
 
 services:
 	router: FPAIS\RouterFactory::createRouter
