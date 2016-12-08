@@ -2,25 +2,52 @@
 
 namespace FPAIS\Data\Entity;
 
-class Training {
+abstract class Training {
 
-    use Nette\SmartObject;
+    use \Nette\SmartObject;
 
-    private $coach;
-    private $place;
-    private $signedPlayers;
+    /**
+     * @var int
+     */
+    protected $id;
 
-    function getCoach() {
-        return $this->coach;
-    }
+    /**
+     * @var int|Coach
+     */
+    protected $coach;
+
+    /**
+     * @var int
+     */
+    protected $place;
+
+    /**
+     * @var array
+     */
+    protected $signedPlayers = NULL;
+
+    /**
+     * @var int
+     */
+    protected $minPlayers;
+
+    /**
+     * @var int
+     */
+    protected $maxPlayers;
+
+    /**
+     * @var int
+     */
+    protected $start;
+
+    abstract function getCoach();
 
     function getPlace(): int {
         return $this->place;
     }
 
-    function getSignedPlayers(): array {
-        return $this->signedPlayers;
-    }
+    abstract function getSignedPlayers(): \Nette\Utils\ArrayList;
 
     function setCoach(int $coach) {
         $this->coach = $coach;
@@ -28,10 +55,6 @@ class Training {
 
     function setPlace(int $place) {
         $this->place = $place;
-    }
-
-    function setSignedPlayers(array $signedPlayers) {
-        $this->signedPlayers = $signedPlayers;
     }
 
 }

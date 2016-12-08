@@ -2,17 +2,14 @@
 
 namespace FPAIS\Data\SQLDAO;
 
+use FPAIS\Data\Entity;
+
 /**
  * Description of SQLTrainingDAO
  *
  * @author viky
  */
 class SQLTrainingDAO implements \FPAIS\Data\DAO\ITrainingDAO {
-
-    /**
-     * @var \Nette\Database\Context
-     */
-    private $database;
 
     /**
      * @var \Nette\Database\Table\Selection
@@ -25,18 +22,23 @@ class SQLTrainingDAO implements \FPAIS\Data\DAO\ITrainingDAO {
 
     public function findBy(array $by): \Nette\Utils\ArrayList {
         $results = $this->table->where($by)->fetchAll();
-        foreach ($results as $key => $value) {
-            dump($value);
+        $entities = new \Nette\Utils\ArrayList();
+        foreach ($results as $ar) {
+            $entities[] = Entity\SQLTraining::buildFromRow($ar);
         }
-        return new \Nette\Utils\ArrayList($results);
+        return $entities;
     }
 
-    public function findById(int $id): \FPAIS\Data\Entity\Training {
-        
+    public function findById(int $id): Entity\Training {
+        throw new Exception('not implemented yet');
     }
 
     public function findAll(): \Nette\Utils\ArrayList {
         return $this->findBy([]);
+    }
+
+    public function save(Entity\Training $t): int {
+        throw new Exception('not implemented yet');
     }
 
 }

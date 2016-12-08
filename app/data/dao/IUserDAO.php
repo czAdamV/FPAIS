@@ -3,15 +3,17 @@
 namespace FPAIS\Data\DAO;
 
 use FPAIS\Data\Entity;
-use Nette\Utils;
+/**
+ *
+ * @author viky
+ */
+interface IUserDAO {
 
-interface ITrainingDAO {
-
-    public function findById(int $id): Entity\Training;
+    public function findById(int $id): Entity\User;
 
     public function findBy(array $by): Utils\ArrayList;
 
     public function findAll(): Utils\ArrayList;
 
-    public function save(Entity\Training $t): int;
+    public function save(Entity\User $u): int;
 }
