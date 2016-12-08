@@ -22,7 +22,7 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
         $this->trainingDao = $trainingDao;
     }
 
-    public function getList(array $filter = []) {
+    public function getList(array $filter = []): \Nette\Utils\ArrayList {
         $res =  $this->trainingDao->findBy($filter);
         
         foreach ($res as $key => $line) {
@@ -42,7 +42,7 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
         
     }
 
-    public function getTrainings(Model\BusinessObject\Place $p) {
+    public function getTrainings(Model\BusinessObject\Place $p, int $start): \Nette\Utils\ArrayList {
         
     }
 
