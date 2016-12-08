@@ -43,18 +43,46 @@ abstract class Training {
 
     abstract function getCoach();
 
-    function getPlace(): int {
+    abstract function getSignedPlayers(): \Nette\Utils\ArrayList;
+
+    function getId() {
+        return $this->id;
+    }
+
+    function getPlace() {
         return $this->place;
     }
 
-    abstract function getSignedPlayers(): \Nette\Utils\ArrayList;
-
-    function setCoach(int $coach) {
-        $this->coach = $coach;
+    function getMinPlayers() {
+        return $this->minPlayers;
     }
 
-    function setPlace(int $place) {
+    function getMaxPlayers() {
+        return $this->maxPlayers;
+    }
+
+    function getStart() {
+        return $this->start;
+    }
+
+    function setId($id) {
+        $this->id = $id;
+    }
+
+    function setPlace($place) {
         $this->place = $place;
+    }
+
+    function setMinPlayers($minPlayers) {
+        $this->minPlayers = $minPlayers;
+    }
+
+    function setMaxPlayers($maxPlayers) {
+        $this->maxPlayers = $maxPlayers;
+    }
+
+    function setStart($start) {
+        $this->start = $start;
     }
 
 }

@@ -9,6 +9,8 @@ namespace FPAIS\Data\Entity;
  */
 class SQLTraining extends Training {
 
+    use \Nette\SmartObject;
+
     /**
      * @var \Nette\Database\Table\ActiveRow
      */

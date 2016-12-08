@@ -24,15 +24,26 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
 
     public function getList(array $filter = []) {
         $res =  $this->trainingDao->findBy($filter);
-        //convert to BO
         
         foreach ($res as $key => $line) {
-            
+            //new BO(Entita)
         }
     }
 
     public function getOneBy(array $filter = []): Model\BusinessObject\Training {
         return NULL;
+    }
+
+    public function createTraining(Model\BusinessObject\Training $t): int {
+        return $this->trainingDao->save($t->entity);
+    }
+
+    public function getTraining(int $id): Model\BusinessObject\Training {
+        
+    }
+
+    public function getTrainings(Model\BusinessObject\Place $p) {
+        
     }
 
 }

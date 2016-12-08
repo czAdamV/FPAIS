@@ -8,5 +8,6 @@ namespace FPAIS\Data\Entity;
  * @author viky
  */
 abstract class Coach extends User {
-    
+
+    use \Nette\SmartObject;
 }

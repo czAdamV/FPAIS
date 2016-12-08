@@ -8,5 +8,16 @@ namespace FPAIS\Model\BusinessObject;
  * @author viky
  */
 class Training {
-    //put your code here
+
+    use \Nette\SmartObject;
+
+    /**
+     * @var \FPAIS\Data\Entity\Training
+     */
+    protected $entity;
+
+    public static function buildFromEntity(\FPAIS\Data\Entity\Training $t) {
+        $this->entity = $t;
+    }
+
 }

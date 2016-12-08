@@ -8,7 +8,7 @@ namespace FPAIS\Presenters;
  * @author viky
  */
 class TrainingPresenter extends \Nette\Application\UI\Presenter {
-
+use \Nette\SmartObject;
     /**
      * @inject 
      * @var \FPAIS\Model\ITrainingManager

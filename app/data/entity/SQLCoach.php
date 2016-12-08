@@ -7,6 +7,7 @@ namespace FPAIS\Data\Entity;
  *
  * @author viky
  */
-class SQLCoach extends Coach{
-    //put your code here
+class SQLCoach extends Coach {
+
+    use \Nette\SmartObject;
 }

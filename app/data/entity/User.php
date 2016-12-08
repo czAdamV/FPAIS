@@ -9,6 +9,8 @@ namespace FPAIS\Data\Entity;
  */
 abstract class User {
 
+    use \Nette\SmartObject;
+
     protected $banedTo;
     protected $email;
     protected $name;
