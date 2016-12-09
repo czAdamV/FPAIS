@@ -10,4 +10,6 @@ namespace FPAIS\Data\Entity;
 abstract class Coach extends User {
 
     use \Nette\SmartObject;
+    
+    protected $coachID;
 }

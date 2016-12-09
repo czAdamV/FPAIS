@@ -22,7 +22,7 @@ class SQLTraining extends Training {
         $entity->id = $ar->trainingID;
         $entity->place = $ar->place;
         $entity->signedPlayers = NULL;
-        $entity->coach = NULL;
+        $entity->coach = $ar->coach;
         $entity->minPlayers = $ar->minPlayers;
         $entity->maxPlayers = $ar->maxPlayers;
         $entity->start = $ar->start;
@@ -40,8 +40,8 @@ class SQLTraining extends Training {
     }
 
     public function getCoach(): Coach {
-        if ($this->coach === NULL) {
-            $this->coach = SQLCoach::buildFromRow($this->activeRow->coach);
+        if (is_numeric($this->coach)) {
+            $this->coach = SQLCoach::buildFromRow($this->activeRow->ref('coach'));
         }
         return $this->coach;
     }

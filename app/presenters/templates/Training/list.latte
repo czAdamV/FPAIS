@@ -1,6 +1,14 @@
 {block content}
 
 {control newTrainingForm}
-<div n:foreach="$trainings as $training">
-    {dump $training}
-</div>
+<table>
+    <thead>
+        <tr><th>Jméno trenéra</th><th>min hracu</th><th>max hracu</th></tr>
+    </thead><tbody>
+        <tr n:foreach="$trainings as $training">
+            <td>{$training->getCoach()->getName()}</td>
+            <td>{$training->getMinPlayers()}</td>
+            <td>{$training->getMaxPlayers()}</td>
+        </tr>
+    </tbody>
+</table>

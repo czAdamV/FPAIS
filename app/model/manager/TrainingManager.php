@@ -22,12 +22,14 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
         $this->trainingDao = $trainingDao;
     }
 
-    public function getList(array $filter = []): \Nette\Utils\ArrayList {
+    public function getList(array $filter = []) : \Nette\Utils\ArrayList{
         $res =  $this->trainingDao->findBy($filter);
         
-        foreach ($res as $key => $line) {
-            //new BO(Entita)
+        $bos = new \Nette\Utils\ArrayList();
+        foreach ($res as $line) {
+            $bos[] = Model\BusinessObject\Training::buildFromEntity($line);
         }
+        return $bos;
     }
 
     public function getOneBy(array $filter = []): Model\BusinessObject\Training {
