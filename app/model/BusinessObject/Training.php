@@ -21,7 +21,9 @@ class Training {
         $newBo->entity = $t;
         return $newBo;
     }
-    /*lazy loads */
+
+    /* lazy loads */
+
     public function getCoach() {
         return Coach::buildFromEntity($this->entity->getCoach());
     }

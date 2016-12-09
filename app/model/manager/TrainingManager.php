@@ -22,9 +22,9 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
         $this->trainingDao = $trainingDao;
     }
 
-    public function getList(array $filter = []) : \Nette\Utils\ArrayList{
-        $res =  $this->trainingDao->findBy($filter);
-        
+    public function getList(array $filter = []): \Nette\Utils\ArrayList {
+        $res = $this->trainingDao->findBy($filter);
+
         $bos = new \Nette\Utils\ArrayList();
         foreach ($res as $line) {
             $bos[] = Model\BusinessObject\Training::buildFromEntity($line);

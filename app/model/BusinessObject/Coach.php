@@ -2,7 +2,6 @@
 
 namespace FPAIS\Model\BusinessObject;
 
-
 /**
  * Description of Coach
  *
