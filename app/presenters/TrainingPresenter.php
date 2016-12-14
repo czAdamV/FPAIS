@@ -16,7 +16,7 @@ class TrainingPresenter extends \Nette\Application\UI\Presenter {
     public $trainingManager;
 
     public function actionList() {
-        $this->template->trainings = $this->trainingManager->getList([]);
+        $this->template->trainings = $this->trainingManager->getList();
     }
 
     public function createComponentNewTrainingForm(): \Nette\Application\UI\Form {

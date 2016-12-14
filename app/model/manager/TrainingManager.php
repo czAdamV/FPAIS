@@ -20,7 +20,7 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
         $this->trainingDao = $trainingDao;
     }
 
-    public function getList(array $filter = []): \Nette\Utils\ArrayList {
+    public function getList(\FPAIS\Model\Helpers\TrainingFilter $filter = NULL): \Nette\Utils\ArrayList {
         $res = $this->trainingDao->findBy($filter);
 
         $bos = new \Nette\Utils\ArrayList();
@@ -30,7 +30,7 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
         return $bos;
     }
 
-    public function getOneBy(array $filter = []): \FPAIS\Model\BusinessObject\Training {
+    public function getOneBy(\FPAIS\Model\Helpers\TrainingFilter $filter = NULL): \FPAIS\Model\BusinessObject\Training {
         return NULL;
     }
 

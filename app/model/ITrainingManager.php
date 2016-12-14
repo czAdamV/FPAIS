@@ -8,9 +8,9 @@ namespace FPAIS\Model;
  */
 interface ITrainingManager {
 
-    public function getList(array $filter = []): \Nette\Utils\ArrayList;
+    public function getList(Helpers\TrainingFilter $filter = NULL): \Nette\Utils\ArrayList;
 
-    public function getOneBy(array $filter = []): \FPAIS\Model\BusinessObject\Training;
+    public function getOneBy(Helpers\TrainingFilter $filter = NULL): \FPAIS\Model\BusinessObject\Training;
 
     public function createTraining(\FPAIS\Model\BusinessObject\Training $t): int;
 
