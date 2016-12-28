@@ -18,4 +18,8 @@ services:
 	trainingManager: FPAIS\Model\Manager\TrainingManager
 	traincsouingDao: FPAIS\Data\SQLDAO\SQLTrainingDAO
 
+extensions:
+	dateTimePicker: RadekDostal\NetteComponents\DateTimePicker\DateTimePicker\DI\DateTimePickerExtension
 
+dateTimePicker:
+	format: j. n. Y

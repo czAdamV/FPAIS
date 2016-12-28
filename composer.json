@@ -20,7 +20,8 @@
 		"nette/utils": "^2.4",
 		"latte/latte": "^2.4",
 		"tracy/tracy": "^2.4",
-		"vrana/adminer": "4.2.3"
+		"vrana/adminer": "4.2.3",
+		"radekdostal/nette-datetimepicker": "^2.5"
 	},
 	"require-dev": {
 		"nette/tester": "^1.6"

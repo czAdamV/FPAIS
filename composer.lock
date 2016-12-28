@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "44d141e8b9897536b220ea40cfcb5390",
-    "content-hash": "6592cfc8c225d7144e4d1224b1c74242",
+    "hash": "165425c05c4ff8b39b1ab2531815b363",
+    "content-hash": "b17e2fe9968ab6069bdee5c708cddacb",
     "packages": [
         {
             "name": "latte/latte",
@@ -1096,6 +1096,49 @@
             "description": "Nette Utility Classes",
             "homepage": "https://nette.org",
             "time": "2016-09-28 17:57:14"
+        },
+        {
+            "name": "radekdostal/nette-datetimepicker",
+            "version": "2.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/radekdostal/Nette-DateTimePicker.git",
+                "reference": "2cddfbf627efac9cc2326cd61bf8a8c4c6e7e766"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/radekdostal/Nette-DateTimePicker/zipball/2cddfbf627efac9cc2326cd61bf8a8c4c6e7e766",
+                "reference": "2cddfbf627efac9cc2326cd61bf8a8c4c6e7e766",
+                "shasum": ""
+            },
+            "require": {
+                "nette/di": "^2.2.0",
+                "nette/forms": "^2.2.0",
+                "nette/utils": "^2.2.0",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "tracy/tracy": "^2.2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1",
+                "LGPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Radek Dostál",
+                    "email": "radek.dostal@gmail.com"
+                }
+            ],
+            "description": "DatePicker and DateTimePicker input controls for Nette Framework",
+            "time": "2016-10-24 12:27:11"
         },
         {
             "name": "tracy/tracy",
