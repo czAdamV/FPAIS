@@ -42,7 +42,9 @@ class SQLTrainingDAO implements \FPAIS\Data\DAO\ITrainingDAO {
                     'start' => $t->getStart(),
                     'minPlayers' => $t->getMinPlayers(),
                     'maxPlayers' => $t->getMaxPlayers(),
-        ])->getPrimary();
+                    'coach' => $t->getCoachId(),
+                    'place' => $t->getPlace(),
+                ])->getPrimary();
     }
 
 }

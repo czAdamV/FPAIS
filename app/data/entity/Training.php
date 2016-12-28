@@ -43,6 +43,8 @@ abstract class Training {
 
     abstract function getCoach();
 
+    abstract function getCoachId(): int;
+
     abstract function getSignedPlayers(): \Nette\Utils\ArrayList;
 
     function getId() {
@@ -83,6 +85,10 @@ abstract class Training {
 
     function setStart($start) {
         $this->start = $start;
+    }
+
+    public function setCoach($coach) {
+        $this->coach = $coach;
     }
 
 }

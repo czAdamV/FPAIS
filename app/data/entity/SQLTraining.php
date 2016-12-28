@@ -46,4 +46,11 @@ class SQLTraining extends Training {
         return $this->coach;
     }
 
+    public function getCoachId(): int {
+        if (is_numeric($this->coach)) {
+            return $this->coach;
+        }
+        return $this->coach->getUserID();
+    }
+
 }
