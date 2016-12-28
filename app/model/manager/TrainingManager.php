@@ -36,7 +36,7 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
     }
 
     public function createTraining(\FPAIS\Model\BusinessObject\Training $t): int {
-        return $this->trainingDao->save($t->entity);
+        return $this->trainingDao->save($t->getEntity());
     }
 
     public function getTraining(int $id): \FPAIS\Model\BusinessObject\Training {

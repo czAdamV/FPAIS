@@ -38,7 +38,11 @@ class SQLTrainingDAO implements \FPAIS\Data\DAO\ITrainingDAO {
     }
 
     public function save(Entity\Training $t): int {
-        throw new Exception('not implemented yet');
+        return $this->table->insert([
+                    'start' => $t->getStart(),
+                    'minPlayers' => $t->getMinPlayers(),
+                    'maxPlayers' => $t->getMaxPlayers(),
+        ])->getPrimary();
     }
 
 }

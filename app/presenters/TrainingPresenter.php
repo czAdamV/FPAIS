@@ -31,7 +31,12 @@ class TrainingPresenter extends \Nette\Application\UI\Presenter {
     }
 
     public function onSubmitNewTraining(\Nette\Application\UI\Form $form, $values) {
-        dump($form);
+        dump($values);
+        $training = \FPAIS\Model\BusinessObject\Training::buildFromEntity(new \FPAIS\Data\Entity\SQLTraining());
+        $training->setMinPlayers($values['min']);
+        $training->setMaxPlayers($values['max']);
+        $training->setStart(new \Nette\Utils\DateTime($values['date']));
+        $this->trainingManager->createTraining($training);
     }
 
 }
