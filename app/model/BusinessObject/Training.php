@@ -68,6 +68,10 @@ class Training {
         $this->entity->setStart($start);
     }
 
+    public function setCoach($coach) {
+        $this->entity->setCoach($coach);
+    }
+
     public function getEntity(): \FPAIS\Data\Entity\Training {
         return $this->entity;
     }

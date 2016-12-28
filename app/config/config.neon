@@ -16,7 +16,11 @@ database:
 services:
 	router: FPAIS\RouterFactory::createRouter
 	trainingManager: FPAIS\Model\Manager\TrainingManager
+	placeeeeManager: FPAIS\Model\Manager\PlaceManager
+	userrrrrManager: FPAIS\Model\Manager\UserManager
 	traincsouingDao: FPAIS\Data\SQLDAO\SQLTrainingDAO
+	placeeeeeeeeDao: FPAIS\Data\SQLDAO\SQLPlaceDAO
+	userrrrrrrrrDao: FPAIS\Data\SQLDAO\SQLUserDAO
 
 extensions:
 	dateTimePicker: RadekDostal\NetteComponents\DateTimePicker\DateTimePicker\DI\DateTimePickerExtension
