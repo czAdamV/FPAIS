@@ -1,11 +1,5 @@
 <?php
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 namespace FPAIS\Data\Entity;
 
 /**
@@ -14,5 +8,26 @@ namespace FPAIS\Data\Entity;
  * @author viky
  */
 class Place {
-    use Nette\SmartObject;
+
+    use \Nette\SmartObject;
+
+    protected $placeID;
+    protected $addres;
+
+    function getPlaceID() {
+        return $this->placeID;
+    }
+
+    function getAddres() {
+        return $this->addres;
+    }
+
+    function setPlaceID($placeID) {
+        $this->placeID = $placeID;
+    }
+
+    function setAddres($addres) {
+        $this->addres = $addres;
+    }
+
 }
