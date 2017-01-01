@@ -33,7 +33,7 @@ class TrainingPresenter extends \Nette\Application\UI\Presenter {
 
     public function createComponentNewTrainingForm(): \Nette\Application\UI\Form {
         $form = new \Nette\Application\UI\Form();
-        $form->addDateTimePicker('date', 'Date');
+        $form->addText('date', 'Date')->setAttribute('type', 'datetime-local');
         $form->addSelect('place', 'Místo: ', $this->placeManager->getArray());
         $form->addSelect('coach', 'Coach: ', $this->userManager->getArray());//bere vsechny uzivatele
         $form->addInteger('min', 'Minimum hráčů');
