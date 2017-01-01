@@ -21,7 +21,7 @@ class SQLPlaceDAO implements \FPAIS\Data\DAO\IPlaceDAO {
     }
 
     public function findAll(): \Nette\Utils\ArrayList {
-        
+        return $this->findBy([]);
     }
 
     public function findBy(array $by): \Nette\Utils\ArrayList {

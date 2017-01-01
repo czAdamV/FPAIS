@@ -8,7 +8,7 @@ namespace FPAIS\Model;
  */
 interface IPlaceManager {
 
-    public function getList(Helpers\PlaceFilter $filter = NULL): \Nette\Utils\ArrayList;
+    public function getList(Helpers\TrainingFilter $filter = NULL): \Nette\Utils\ArrayList;
 
     public function getArray(): array;
 }
