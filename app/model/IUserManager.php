@@ -8,7 +8,7 @@ namespace FPAIS\Model;
  */
 interface IUserManager {
 
-    public function getList(Helpers\UserFilter $filter = NULL): \Nette\Utils\ArrayList;
+    public function getList(Helpers\TrainingFilter $filter = NULL): \Nette\Utils\ArrayList;
 
     public function getArray(): array;
 }

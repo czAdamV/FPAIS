@@ -20,7 +20,7 @@ class UserManager implements \FPAIS\Model\IUserManager {
         $this->userDao = $userDao;
     }
 
-    public function getList(\FPAIS\Model\Helpers\UserFilter $filter = NULL): \Nette\Utils\ArrayList {
+    public function getList(\FPAIS\Model\Helpers\TrainingFilter $filter = NULL): \Nette\Utils\ArrayList {
         //todo use helper
         $res = $this->userDao->findBy([]);
 

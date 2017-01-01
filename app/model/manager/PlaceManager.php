@@ -26,13 +26,13 @@ class PlaceManager implements \FPAIS\Model\IPlaceManager {
         $this->placeDao = $userDao;
     }
 
-    public function getList(\FPAIS\Model\Helpers\PlaceFilter $filter = NULL): \Nette\Utils\ArrayList {
+    public function getList(\FPAIS\Model\Helpers\TrainingFilter $filter = NULL): \Nette\Utils\ArrayList {
         throw new Exception("Not implemented yet");
     }
 
     public function getArray(): array {
         //todo use helper
-        $res = $this->placeDao->findBy([]);
+        $res = $this->placeDao->findAll();
 
        $bos = [];
         foreach ($res as $line) {
