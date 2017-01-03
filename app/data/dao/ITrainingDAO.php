@@ -15,5 +15,5 @@ interface ITrainingDAO {
 
     public function save(Entity\Training $t): int;
     
-    public function addPlayer(Entity\Training $t, Entity\Player $p);
+    public function addPlayer(Entity\Training $t, Entity\User $p);
 }

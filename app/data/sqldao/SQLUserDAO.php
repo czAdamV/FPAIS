@@ -34,7 +34,11 @@ class SQLUserDAO implements \FPAIS\Data\DAO\IUserDAO {
     }
 
     public function findById(int $id): \FPAIS\Data\Entity\User {
-        
+        $res = $this->findBy(['userID' => $id]);
+        if (count($res) == 1) {
+            return $res[0];
+        }
+        throw new Exception("No such user");
     }
 
     public function save(\FPAIS\Data\Entity\User $u): int {

@@ -21,4 +21,8 @@ class SQLCoach extends Coach {
         return $entity;
     }
 
+    public function getRole(): string {
+        
+    }
+
 }

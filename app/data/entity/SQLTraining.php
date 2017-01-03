@@ -45,6 +45,13 @@ class SQLTraining extends Training {
         }
         return $this->coach;
     }
+    
+    public function getPlace(): Place {
+        if (is_numeric($this->place)) {
+            $this->place = SQLPlace::buildFromRow($this->activeRow->ref('place'));
+        }
+        return $this->place;
+    }
 
     public function getCoachId(): int {
         if (is_numeric($this->coach)) {

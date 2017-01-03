@@ -36,7 +36,11 @@ class SQLTrainingDAO implements \FPAIS\Data\DAO\ITrainingDAO {
     }
 
     public function findById(int $id): Entity\Training {
-        throw new Exception('not implemented yet');
+        $res = $this->findBy(['trainingID' => $id]);
+        if (count($res) == 1) {
+            return $res[0];
+        }
+        throw new Exception("No such training");
     }
 
     public function findAll(): \Nette\Utils\ArrayList {
@@ -53,7 +57,7 @@ class SQLTrainingDAO implements \FPAIS\Data\DAO\ITrainingDAO {
                 ])->getPrimary();
     }
 
-    public function addPlayer(Entity\Training $t, Entity\Player $p) {
+    public function addPlayer(Entity\Training $t, Entity\User $p) {
         return $this->playerToTrainingTable->insert([
                     'playerID' => $p->getUserID(),
                     'trainingID' => $t->getId(),

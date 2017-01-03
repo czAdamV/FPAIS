@@ -17,7 +17,13 @@ class Place {
     protected $entity;
 
     public static function buildFromEntity(\FPAIS\Data\Entity\Place $t) {
-        $this->entity = $t;
+        $newBo = new Place();
+        $newBo->entity = $t;
+        return $newBo;
+    }
+
+    function getName() {
+        return $this->entity->getAddres();
     }
 
 }

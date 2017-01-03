@@ -27,7 +27,7 @@ class SQLUser extends User {
         return $entity;
     }
 
-    public function getRole() {
+    public function getRole() : string{
         foreach ($this->activeRow->related('Player.user') as $row){
             return "user";
         }

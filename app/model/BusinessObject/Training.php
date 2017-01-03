@@ -33,7 +33,7 @@ class Training {
     }
 
     public function getPlace() {
-        return $this->entity->getPlace();
+        return Place::buildFromEntity($this->entity->getPlace());
     }
 
     public function getMinPlayers() {

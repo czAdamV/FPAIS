@@ -35,7 +35,6 @@ class TrainingPresenter extends BasePresenter {
         $form = new \Nette\Application\UI\Form();
         $form->addText('date', 'Date')->setAttribute('type', 'datetime-local');
         $form->addSelect('place', 'Místo: ', $this->placeManager->getArray());
-        $form->addSelect('coach', 'Coach: ', $this->userManager->getArray()); //bere vsechny uzivatele
         $form->addInteger('min', 'Minimum hráčů');
         $form->addInteger('max', 'Maximum hráčů');
         $form->addSubmit('create', 'vytvořit');
@@ -49,7 +48,7 @@ class TrainingPresenter extends BasePresenter {
         $training->setMaxPlayers($values['max']);
         $training->setStart(new \Nette\Utils\DateTime($values['date']));
         $training->setPlace($values['place']);
-        $training->setCoach($values['coach']);
+        $training->setCoach($this->user->getId());
         $this->trainingManager->createTraining($training);
         $this->redirect('this');
     }

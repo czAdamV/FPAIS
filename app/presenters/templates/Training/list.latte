@@ -6,6 +6,7 @@
     </thead><tbody>
         <tr n:foreach="$trainings as $training">
             <td>{$training->getCoach()->getName()}</td>
+            <td>{$training->getPlace()->getName()}</td>
             <td>{$training->getMinPlayers()}</td>
             <td>{$training->getMaxPlayers()}</td>
             <td><a n:href="joinTraining! $training->getId()">Přihlásit se</a></td>
