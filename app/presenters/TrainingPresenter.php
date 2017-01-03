@@ -7,7 +7,7 @@ namespace FPAIS\Presenters;
  *
  * @author viky
  */
-class TrainingPresenter extends BasePresenter {
+class TrainingPresenter extends SecuredPresenter {
 
     /**
      * @inject 
@@ -55,6 +55,8 @@ class TrainingPresenter extends BasePresenter {
 
     public function handleJoinTraining($trainingId) {
         $this->trainingManager->addPlayer($trainingId, $this->getUser()->id);
+        $this->flashMessage('OK');
+        $this->redirect('Homepage:');
     }
 
 }
