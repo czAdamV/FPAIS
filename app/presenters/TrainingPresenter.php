@@ -59,7 +59,8 @@ class TrainingPresenter extends SecuredPresenter {
         $training->setPlace($values['place']);
         $training->setCoach($this->user->getId());
         $this->trainingManager->createTraining($training);
-        $this->redirect('this');
+        $this->flashMessage('Trénink byl úspěšně založen.');
+        $this->redirect('Training:list');
     }
 
     public function createComponentFilterForm(): \Nette\Application\UI\Form {
