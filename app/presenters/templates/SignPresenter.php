@@ -26,6 +26,7 @@ class SignPresenter extends \Nette\Application\UI\Presenter {
     public function signInFormSucceeded($form, $values) {
         try {
             $this->getUser()->login($values->username);
+            $this->flashMessage('Přihlášení proběhlo úspěšně.');
             $this->redirect('Homepage:');
         } catch (Nette\Security\AuthenticationException $e) {
             $form->addError('Nesprávné přihlašovací jméno nebo heslo.');

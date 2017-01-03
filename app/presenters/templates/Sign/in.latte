@@ -1,13 +1,13 @@
 {block content}
-
-{control signInForm}
-
-
-{form signInForm}
-    <div class="form-group" n:foreach="$form->controls as $name => $field">
-        {label $name /}
-        {input $name}
-        <td n:ifcontent>{inputError $name}</td>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Přihlásit se</h3>
+        </div>
+        <div class="panel-body">
+            <p>Ukázková uživatelská jména jsou <strong>trener</strong> a <strong>bfu</strong>.
+            {control signInForm}
+        </div>
     </div>
-{/form}
+
+{/block}
 
