@@ -33,11 +33,12 @@ class TrainingPresenter extends SecuredPresenter {
 
     public function createComponentNewTrainingForm(): \Nette\Application\UI\Form {
         $form = new \Nette\Application\UI\Form();
-        $form->addText('date', 'Date')->setAttribute('type', 'datetime-local');
-        $form->addSelect('place', 'Místo: ', $this->placeManager->getArray());
+        $form->addText('date', 'Datum')->setAttribute('type', 'date');
+        $form->addText('time', 'Čas')->setAttribute('type', 'time');
+        $form->addSelect('place', 'Místo', $this->placeManager->getArray());
         $form->addInteger('min', 'Minimum hráčů');
         $form->addInteger('max', 'Maximum hráčů');
-        $form->addSubmit('create', 'vytvořit');
+        $form->addSubmit('create', 'Vytvořit');
         $form->onSuccess[] = [$this, 'onSubmitNewTraining'];
         return $form;
     }
@@ -46,7 +47,7 @@ class TrainingPresenter extends SecuredPresenter {
         $training = \FPAIS\Model\BusinessObject\Training::buildFromEntity(new \FPAIS\Data\Entity\SQLTraining());
         $training->setMinPlayers($values['min']);
         $training->setMaxPlayers($values['max']);
-        $training->setStart(new \Nette\Utils\DateTime($values['date']));
+        $training->setStart(new \Nette\Utils\DateTime($values['date']." ".$values['time']));
         $training->setPlace($values['place']);
         $training->setCoach($this->user->getId());
         $this->trainingManager->createTraining($training);
@@ -56,7 +57,7 @@ class TrainingPresenter extends SecuredPresenter {
     public function createComponentFilterForm(): \Nette\Application\UI\Form {
         $form = new \Nette\Application\UI\Form();
         $form->addSelect('place', 'Místo: ', $this->placeManager->getArray());
-        $form->addSubmit('create', 'filtruj');
+        $form->addSubmit('create', 'Filtrovat');
         //todo time
         $form->onSuccess[] = [$this, 'onSubmitFilter'];
         return $form;
