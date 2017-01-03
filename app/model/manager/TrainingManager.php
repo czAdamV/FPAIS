@@ -32,7 +32,14 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
             $res = $this->trainingDao->findBy([]);
         } else {
             //todo more params
-            $res = $this->trainingDao->findBy(['place' => $filter->place]);
+            $params = array();
+            if(isset($filter->place)){
+                $params['place'] = $filter->place;
+            }
+            if(isset($filter->time)){
+                $params['start'] = $filter->time;
+            }
+            $res = $this->trainingDao->findBy($params);
         }
 
         $bos = new \Nette\Utils\ArrayList();

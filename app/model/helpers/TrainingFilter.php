@@ -15,9 +15,11 @@ class TrainingFilter {
     public $place = NULL;
 
     //...
-    function __construct($time, $areaID) {
+    function __construct($time = null, $areaID = null) {
         $this->time = $time;
         $this->place = $areaID;
     }
+    
+    
 
 }

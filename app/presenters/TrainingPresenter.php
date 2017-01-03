@@ -27,8 +27,12 @@ class TrainingPresenter extends SecuredPresenter {
      */
     public $userManager;
 
-    public function actionList() {
-        $this->template->trainings = $this->trainingManager->getList();
+    public function actionList($place = 1, $time = null) {
+        if($time == null){
+            $time = time();
+        }
+        $filter = new \FPAIS\Model\Helpers\TrainingFilter($time, $place);
+        $this->template->trainings = $this->trainingManager->getList($filter);
     }
 
     public function createComponentNewTrainingForm(): \Nette\Application\UI\Form {
@@ -56,18 +60,27 @@ class TrainingPresenter extends SecuredPresenter {
 
     public function createComponentFilterForm(): \Nette\Application\UI\Form {
         $form = new \Nette\Application\UI\Form();
-        $form->addSelect('place', 'Místo: ', $this->placeManager->getArray());
+        $form->addSelect('place', 'Místo: ', $this->placeManager->getArray())->setDefaultValue(1);
+        $form->addText('time', 'Čas: ')->setDefaultValue(date('Y-m-d H:i'));
+        
         $form->addSubmit('create', 'Filtrovat');
-        //todo time
         $form->onSuccess[] = [$this, 'onSubmitFilter'];
         return $form;
     }
 
     public function onSubmitFilter(\Nette\Application\UI\Form $form, $values) {
-        //todo time
-        $tf = new \FPAIS\Model\Helpers\TrainingFilter(NULL, $values['place']);
-        $list = $this->trainingManager->getList($tf);
-        //wtf now?
+        
+        $filter = [];
+        if(isset($values['place'])){
+            $filter['place']=$values['place'];
+        }
+        if(isset($values['time'])){
+            $date = new \DateTime($values['time']);
+            $date->format('Y-m-d H:i');
+            $filter['time']=$date->getTimestamp();
+        }
+        
+        $this->redirect(200, 'Training:list', $filter);
     }
 
     public function handleJoinTraining($trainingId) {

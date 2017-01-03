@@ -27,7 +27,16 @@ class SQLTrainingDAO implements \FPAIS\Data\DAO\ITrainingDAO {
     }
 
     public function findBy(array $by): \Nette\Utils\ArrayList {
-        $results = $this->trainingTable->where($by)->fetchAll();
+        $start = null;
+        if(isset($by['start'])){
+            $start = $by['start'];
+            unset($by['start']);
+        }
+        $selection = $this->trainingTable->where($by);
+        if(isset($start)){
+            $selection->where('start >= ?',$start);
+        }
+        $results = $selection->fetchAll();
         $entities = new \Nette\Utils\ArrayList();
         foreach ($results as $ar) {
             $entities[] = Entity\SQLTraining::buildFromRow($ar);
