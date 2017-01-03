@@ -15,6 +15,8 @@ class SQLTraining extends Training {
      * @var \Nette\Database\Table\ActiveRow
      */
     private $activeRow;
+    
+    private $numericPlace = null;
 
     public static function buildFromRow(\Nette\Database\Table\ActiveRow $ar): Training {
         $entity = new SQLTraining();
@@ -48,9 +50,18 @@ class SQLTraining extends Training {
     
     public function getPlace(): Place {
         if (is_numeric($this->place)) {
+            $this->numericPlace = $this->place;
             $this->place = SQLPlace::buildFromRow($this->activeRow->ref('place'));
+            
         }
         return $this->place;
+    }
+    
+    public function getPlaceNumeric(): int {
+        if (is_numeric($this->place)) {
+            return $this->place;
+        }
+        return $this->numericPlace;
     }
 
     public function getCoachId(): int {

@@ -26,10 +26,14 @@ class TrainingPresenter extends SecuredPresenter {
      * @var \FPAIS\Model\IUserManager
      */
     public $userManager;
+    
+    private $time = null;
 
     public function actionList($place = 1, $time = null) {
         if($time == null){
             $time = time();
+        } else {
+            $this->time = date('Y-m-d H:i', $time);
         }
         $filter = new \FPAIS\Model\Helpers\TrainingFilter($time, $place);
         $this->template->trainings = $this->trainingManager->getList($filter);
@@ -61,7 +65,10 @@ class TrainingPresenter extends SecuredPresenter {
     public function createComponentFilterForm(): \Nette\Application\UI\Form {
         $form = new \Nette\Application\UI\Form();
         $form->addSelect('place', 'Místo: ', $this->placeManager->getArray())->setDefaultValue(1);
-        $form->addText('time', 'Čas: ')->setDefaultValue(date('Y-m-d H:i'));
+        if($this->time == null){
+            $this->time = date('Y-m-d H:i');
+        }
+        $form->addText('time', 'Čas: ')->setDefaultValue($this->time);
         
         $form->addSubmit('create', 'Filtrovat');
         $form->onSuccess[] = [$this, 'onSubmitFilter'];
@@ -69,7 +76,7 @@ class TrainingPresenter extends SecuredPresenter {
     }
 
     public function onSubmitFilter(\Nette\Application\UI\Form $form, $values) {
-        
+                
         $filter = [];
         if(isset($values['place'])){
             $filter['place']=$values['place'];
