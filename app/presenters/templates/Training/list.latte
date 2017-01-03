@@ -8,6 +8,7 @@
             <td>{$training->getCoach()->getName()}</td>
             <td>{$training->getMinPlayers()}</td>
             <td>{$training->getMaxPlayers()}</td>
+            <td><a n:href="joinTraining! $training->getId()">Přihlásit se</a></td>
         </tr>
     </tbody>
 </table>
