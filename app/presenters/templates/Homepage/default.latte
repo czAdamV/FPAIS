@@ -5,5 +5,13 @@
     <h1>FPAIS</h1>
     <p>Vítejte v aplikaci FPAIS!</p>
     <p>FPAIS je informační systém pro florbalisty, kteří si chtějí zahrát i mimo klub.  Umožňuje vám založit trénink a posbírat hráče.
-    <p><a class="btn btn-primary btn-lg" n:href="Sign:in" role="button">Přihlásit se</a></p>
+    {if !$user->loggedIn}
+        <p><a class="btn btn-primary btn-lg" n:href="Sign:in" role="button">Přihlásit se</a></p>
+    {else}
+        <p><b>Jste přihlášeni</b>, takže se můžete účastnit tréninků.
+        <p>
+            <a class="btn btn-primary btn-lg" n:href="Training:list" role="button">Přihlásit se na trénink</a>
+            <a class="btn btn-primary btn-lg" n:href="Training:create" role="button">Založit trénink</a>
+        </p>
+    {/if}
 </div>
