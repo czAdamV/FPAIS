@@ -21,3 +21,9 @@ services:
 	traincsouingDao: FPAIS\Data\SQLDAO\SQLTrainingDAO
 	placeeeeeeeeDao: FPAIS\Data\SQLDAO\SQLPlaceDAO
 	userrrrrrrrrDao: FPAIS\Data\SQLDAO\SQLUserDAO
+
+security:
+	users:
+		trener: 123
+		hrac: 123
+        

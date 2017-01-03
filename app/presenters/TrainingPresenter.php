@@ -7,7 +7,7 @@ namespace FPAIS\Presenters;
  *
  * @author viky
  */
-class TrainingPresenter extends \Nette\Application\UI\Presenter {
+class TrainingPresenter extends BasePresenter {
 
     /**
      * @inject 
