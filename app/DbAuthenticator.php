@@ -26,7 +26,7 @@ class DbAuthenticator implements \Nette\Security\IAuthenticator {
         if (count($user) == 1) {
             return new \Nette\Security\Identity($user[0]->getUserID(), $user[0]->getRole(), []);
         } else {
-            throw new NS\AuthenticationException('Well...');
+            throw new \Nette\Security\AuthenticationException('Well...');
         }
     }
 
