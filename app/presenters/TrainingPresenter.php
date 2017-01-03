@@ -53,6 +53,22 @@ class TrainingPresenter extends SecuredPresenter {
         $this->redirect('this');
     }
 
+    public function createComponentFilterForm(): \Nette\Application\UI\Form {
+        $form = new \Nette\Application\UI\Form();
+        $form->addSelect('place', 'Místo: ', $this->placeManager->getArray());
+        $form->addSubmit('create', 'filtruj');
+        //todo time
+        $form->onSuccess[] = [$this, 'onSubmitFilter'];
+        return $form;
+    }
+
+    public function onSubmitFilter(\Nette\Application\UI\Form $form, $values) {
+        //todo time
+        $tf = new \FPAIS\Model\Helpers\TrainingFilter(NULL, $values['place']);
+        $list = $this->trainingManager->getList($tf);
+        //wtf now?
+    }
+
     public function handleJoinTraining($trainingId) {
         $this->trainingManager->addPlayer($trainingId, $this->getUser()->id);
         $this->flashMessage('OK');

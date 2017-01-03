@@ -12,12 +12,12 @@ class TrainingFilter {
     use \Nette\SmartObject;
 
     public $time = NULL;
-    public $areaID = NULL;
+    public $place = NULL;
 
     //...
     function __construct($time, $areaID) {
         $this->time = $time;
-        $this->areaID = $areaID;
+        $this->place = $areaID;
     }
 
 }

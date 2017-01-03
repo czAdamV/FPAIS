@@ -28,7 +28,12 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
 
     public function getList(\FPAIS\Model\Helpers\TrainingFilter $filter = NULL): \Nette\Utils\ArrayList {
         //todo use helper
-        $res = $this->trainingDao->findBy([]);
+        if ($filter == NULL) {
+            $res = $this->trainingDao->findBy([]);
+        } else {
+            //todo more params
+            $res = $this->trainingDao->findBy(['placeID' => $filter->place]);
+        }
 
         $bos = new \Nette\Utils\ArrayList();
         foreach ($res as $line) {
