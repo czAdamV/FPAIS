@@ -14,4 +14,6 @@ interface ITrainingDAO {
     public function findAll(): Utils\ArrayList;
 
     public function save(Entity\Training $t): int;
+    
+    public function addPlayer(Entity\Training $t, Entity\Player $p);
 }

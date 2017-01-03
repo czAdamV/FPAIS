@@ -14,14 +14,20 @@ class SQLTrainingDAO implements \FPAIS\Data\DAO\ITrainingDAO {
     /**
      * @var \Nette\Database\Table\Selection
      */
-    private $table;
+    private $trainingTable;
+
+    /**
+     * @var \Nette\Database\Table\Selection
+     */
+    private $playerToTrainingTable;
 
     function __construct(\Nette\Database\Context $database) {
-        $this->table = $database->table('Training');
+        $this->trainingTable = $database->table('Training');
+        $this->playerToTrainingTable = $database->table('JoinTrainingToPlayer');
     }
 
     public function findBy(array $by): \Nette\Utils\ArrayList {
-        $results = $this->table->where($by)->fetchAll();
+        $results = $this->trainingTable->where($by)->fetchAll();
         $entities = new \Nette\Utils\ArrayList();
         foreach ($results as $ar) {
             $entities[] = Entity\SQLTraining::buildFromRow($ar);
@@ -38,13 +44,20 @@ class SQLTrainingDAO implements \FPAIS\Data\DAO\ITrainingDAO {
     }
 
     public function save(Entity\Training $t): int {
-        return $this->table->insert([
+        return $this->trainingTable->insert([
                     'start' => $t->getStart(),
                     'minPlayers' => $t->getMinPlayers(),
                     'maxPlayers' => $t->getMaxPlayers(),
                     'coach' => $t->getCoachId(),
                     'place' => $t->getPlace(),
                 ])->getPrimary();
+    }
+
+    public function addPlayer(Entity\Training $t, Entity\Player $p) {
+        return $this->playerToTrainingTable->insert([
+                    'playerID' => $p->getUserID(),
+                    'trainingID' => $t->getId(),
+        ]);
     }
 
 }

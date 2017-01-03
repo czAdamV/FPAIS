@@ -55,7 +55,7 @@ class TrainingPresenter extends BasePresenter {
     }
 
     public function handleJoinTraining($trainingId) {
-        //$this->trainingManager->addPlayer($t, $p);
+        $this->trainingManager->addPlayer($trainingId, $this->getUser()->id);
     }
 
 }

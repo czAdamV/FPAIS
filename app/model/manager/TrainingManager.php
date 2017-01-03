@@ -16,8 +16,14 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
      */
     private $trainingDao;
 
-    function __construct(\FPAIS\Data\DAO\ITrainingDAO $trainingDao) {
+    /**
+     * @var \FPAIS\Data\DAO\IUserDAO
+     */
+    private $userDao;
+
+    function __construct(\FPAIS\Data\DAO\ITrainingDAO $trainingDao, \FPAIS\Data\DAO\IUserDAO $uDao) {
         $this->trainingDao = $trainingDao;
+        $this->userDao = $uDao;
     }
 
     public function getList(\FPAIS\Model\Helpers\TrainingFilter $filter = NULL): \Nette\Utils\ArrayList {
@@ -47,8 +53,10 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
         
     }
 
-    public function addPlayer(\FPAIS\Model\BusinessObject\Training $t, int $playerId) {
-       //netusim
+    public function addPlayer(int $trainingId, int $playerId) {
+        $trainingtity = $this->trainingDao->findById($trainingId);
+        $playerEntity = $this->userDao->findById($playerId);
+        $this->trainingDao->addPlayer($trainingtity, $playerEntity);
     }
 
 }
