@@ -80,13 +80,13 @@ class TrainingPresenter extends SecuredPresenter {
             $filter['time']=$date->getTimestamp();
         }
         
-        $this->redirect(200, 'Training:list', $filter);
+        $this->redirect(301, 'Training:list', $filter);
     }
 
     public function handleJoinTraining($trainingId) {
         $this->trainingManager->addPlayer($trainingId, $this->getUser()->id);
-        $this->flashMessage('OK');
-        $this->redirect('Homepage:');
+        $this->flashMessage('Byli jste přihlášeni na trénink.');
+        $this->redirect('Training:list');
     }
 
 }
