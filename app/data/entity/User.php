@@ -66,4 +66,5 @@ abstract class User {
         $this->userID = $userID;
     }
 
+    abstract function getRole(): string;
 }
