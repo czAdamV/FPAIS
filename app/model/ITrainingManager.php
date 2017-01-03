@@ -18,5 +18,5 @@ interface ITrainingManager {
 
     public function getTraining(int $id): \FPAIS\Model\BusinessObject\Training;
     
-    public function addPlayer(\FPAIS\Data\Entity\Training $t, \FPAIS\Data\Entity\Player $p);
+    public function addPlayer(BusinessObject\Training $t, int $playerId);
 }

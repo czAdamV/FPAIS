@@ -47,4 +47,8 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
         
     }
 
+    public function addPlayer(\FPAIS\Model\BusinessObject\Training $t, int $playerId) {
+       //netusim
+    }
+
 }
