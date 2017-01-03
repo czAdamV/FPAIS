@@ -15,7 +15,10 @@ class RouterFactory {
      */
     public static function createRouter() {
         $router = new RouteList;
+        // pretty url route
         $router[] = new Route('<presenter>/<action>[/<id>]', 'Homepage:default');
+        // uncomment next line for simple url (nginx, apache witout mod_rewrite )
+        //$router[] = new \Nette\Application\Routers\SimpleRouter('Homepage:default');
         return $router;
     }
 
