@@ -17,4 +17,6 @@ interface ITrainingManager {
     public function getTrainings(\FPAIS\Model\BusinessObject\Place $p, int $start): \Nette\Utils\ArrayList;
 
     public function getTraining(int $id): \FPAIS\Model\BusinessObject\Training;
+    
+    public function addPlayer(\FPAIS\Data\Entity\Training $t, \FPAIS\Data\Entity\Player $p);
 }
