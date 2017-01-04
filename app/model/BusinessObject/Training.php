@@ -77,10 +77,11 @@ class Training {
     }
 
     public function getPlayers(): \Nette\Utils\ArrayList {
-        $al = new \Nette\Utils\ArrayList;
-        foreach ($this->entity->getPlayers as $value) {
-            $al[] = \FPAIS\Data\Entity\SQLPlayer::buildFromRow($value);
-        }
+        $al = $this->entity->getSignedPlayers();
+        
+     //   foreach ($this->entity->getSignedPlayers() as $value) {
+     //       $al[] = \FPAIS\Data\Entity\SQLPlayer::buildFromRow($value);
+     //   }
         return $al;
     }
 

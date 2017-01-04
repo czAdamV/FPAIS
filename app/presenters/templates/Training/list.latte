@@ -16,7 +16,13 @@
             <td class="">{$training->getStart() |date:'%d. %m. %Y  %H:%M' }</td>
             <td class="">{$training->getPlace()->getName()}</td>
             <td class="">{$training->getMinPlayers()} až {$training->getMaxPlayers()}</td>
-            <td class=""><a class="btn btn-primary btn-sm" n:href="joinTraining! $training->getId()">Přihlásit se</a></td>
+            <td class="">
+                {if !in_array($training->getID(),$activeTrainings) }
+                    <a class="btn btn-primary btn-sm" n:href="joinTraining! $training->getId()">Přihlásit se</a>
+                {else}
+                    Jsi přihlášen!
+                {/if}
+            </td>
         </tr>
     </tbody>
 </table>

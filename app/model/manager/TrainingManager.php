@@ -45,6 +45,7 @@ class TrainingManager implements \FPAIS\Model\ITrainingManager {
         $bos = new \Nette\Utils\ArrayList();
         foreach ($res as $line) {
             $bos[] = \FPAIS\Model\BusinessObject\Training::buildFromEntity($line);
+            
         }
         return $bos;
     }

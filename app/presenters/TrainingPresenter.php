@@ -36,7 +36,19 @@ class TrainingPresenter extends SecuredPresenter {
             $this->time = date('Y-m-d H:i', $time);
         }
         $filter = new \FPAIS\Model\Helpers\TrainingFilter($time, $place);
-        $this->template->trainings = $this->trainingManager->getList($filter);
+        $trainings = $this->trainingManager->getList($filter);
+        $userID = $this->getUser()->id;
+        $activeTrainings = [];
+        foreach($trainings as $training){
+            foreach($training->getPlayers() as $player){
+                if($player->getUserID() == $userID){
+                    $activeTrainings[] = $training->getID();
+                    break;
+                }
+            }
+        }
+        $this->template->trainings = $trainings;
+        $this->template->activeTrainings = $activeTrainings;
     }
 
     public function createComponentNewTrainingForm(): \Nette\Application\UI\Form {
