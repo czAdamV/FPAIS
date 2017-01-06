@@ -4,8 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "165425c05c4ff8b39b1ab2531815b363",
-    "content-hash": "b17e2fe9968ab6069bdee5c708cddacb",
+    "content-hash": "6f87350381c17e5971f3c04bd7bca373",
     "packages": [
         {
             "name": "latte/latte",
@@ -71,7 +70,7 @@
                 "templating",
                 "twig"
             ],
-            "time": "2016-09-27 13:10:19"
+            "time": "2016-09-27T13:10:19+00:00"
         },
         {
             "name": "nette/application",
@@ -146,7 +145,7 @@
             ],
             "description": "Nette Application MVC Component",
             "homepage": "https://nette.org",
-            "time": "2016-12-20 11:12:00"
+            "time": "2016-12-20T11:12:00+00:00"
         },
         {
             "name": "nette/bootstrap",
@@ -217,7 +216,7 @@
             ],
             "description": "Nette Bootstrap",
             "homepage": "https://nette.org",
-            "time": "2016-12-19 12:12:10"
+            "time": "2016-12-19T12:12:10+00:00"
         },
         {
             "name": "nette/caching",
@@ -279,7 +278,7 @@
             ],
             "description": "Nette Caching Component",
             "homepage": "https://nette.org",
-            "time": "2016-10-06 00:08:42"
+            "time": "2016-10-06T00:08:42+00:00"
         },
         {
             "name": "nette/component-model",
@@ -336,7 +335,7 @@
             ],
             "description": "Nette Component Model",
             "homepage": "https://nette.org",
-            "time": "2016-06-17 17:36:56"
+            "time": "2016-06-17T17:36:56+00:00"
         },
         {
             "name": "nette/database",
@@ -396,7 +395,7 @@
             ],
             "description": "Nette Database Component",
             "homepage": "https://nette.org",
-            "time": "2016-10-18 13:27:34"
+            "time": "2016-10-18T13:27:34+00:00"
         },
         {
             "name": "nette/di",
@@ -456,7 +455,7 @@
             ],
             "description": "Nette Dependency Injection Component",
             "homepage": "https://nette.org",
-            "time": "2016-12-23 10:26:44"
+            "time": "2016-12-23T10:26:44+00:00"
         },
         {
             "name": "nette/finder",
@@ -512,7 +511,7 @@
             ],
             "description": "Nette Finder: Files Searching",
             "homepage": "https://nette.org",
-            "time": "2016-05-17 15:49:06"
+            "time": "2016-05-17T15:49:06+00:00"
         },
         {
             "name": "nette/forms",
@@ -572,7 +571,7 @@
             ],
             "description": "Nette Forms: greatly facilitates web forms",
             "homepage": "https://nette.org",
-            "time": "2016-12-20 23:49:37"
+            "time": "2016-12-20T23:49:37+00:00"
         },
         {
             "name": "nette/http",
@@ -632,7 +631,7 @@
             ],
             "description": "Nette HTTP Component",
             "homepage": "https://nette.org",
-            "time": "2016-12-19 14:56:54"
+            "time": "2016-12-19T14:56:54+00:00"
         },
         {
             "name": "nette/mail",
@@ -693,7 +692,7 @@
             ],
             "description": "Nette Mail: Sending E-mails",
             "homepage": "https://nette.org",
-            "time": "2016-07-31 12:06:47"
+            "time": "2016-07-31T12:06:47+00:00"
         },
         {
             "name": "nette/neon",
@@ -746,7 +745,7 @@
             ],
             "description": "Nette NEON: parser & generator for Nette Object Notation",
             "homepage": "http://ne-on.org",
-            "time": "2016-06-25 13:59:48"
+            "time": "2016-06-25T13:59:48+00:00"
         },
         {
             "name": "nette/php-generator",
@@ -802,7 +801,7 @@
             ],
             "description": "Nette PHP Generator",
             "homepage": "https://nette.org",
-            "time": "2016-07-31 13:50:37"
+            "time": "2016-07-31T13:50:37+00:00"
         },
         {
             "name": "nette/reflection",
@@ -861,7 +860,7 @@
             ],
             "description": "Nette PHP Reflection Component",
             "homepage": "https://nette.org",
-            "time": "2016-05-17 15:49:34"
+            "time": "2016-05-17T15:49:34+00:00"
         },
         {
             "name": "nette/robot-loader",
@@ -920,7 +919,7 @@
             ],
             "description": "Nette RobotLoader: comfortable autoloading",
             "homepage": "https://nette.org",
-            "time": "2017-01-02 17:15:22"
+            "time": "2017-01-02T17:15:22+00:00"
         },
         {
             "name": "nette/safe-stream",
@@ -975,7 +974,7 @@
             ],
             "description": "Nette SafeStream: Atomic Operations",
             "homepage": "https://nette.org",
-            "time": "2016-03-19 13:06:04"
+            "time": "2016-03-19T13:06:04+00:00"
         },
         {
             "name": "nette/security",
@@ -1033,7 +1032,7 @@
             ],
             "description": "Nette Security: Access Control Component",
             "homepage": "https://nette.org",
-            "time": "2016-12-19 10:53:40"
+            "time": "2016-12-19T10:53:40+00:00"
         },
         {
             "name": "nette/utils",
@@ -1096,7 +1095,7 @@
             ],
             "description": "Nette Utility Classes",
             "homepage": "https://nette.org",
-            "time": "2016-12-19 22:01:55"
+            "time": "2016-12-19T22:01:55+00:00"
         },
         {
             "name": "radekdostal/nette-datetimepicker",
@@ -1139,7 +1138,7 @@
                 }
             ],
             "description": "DatePicker and DateTimePicker input controls for Nette Framework",
-            "time": "2016-10-24 12:27:11"
+            "time": "2016-10-24T12:27:11+00:00"
         },
         {
             "name": "tracy/tracy",
@@ -1201,7 +1200,7 @@
                 "debugger",
                 "nette"
             ],
-            "time": "2016-12-10 15:04:11"
+            "time": "2016-12-10T15:04:11+00:00"
         },
         {
             "name": "vrana/adminer",
@@ -1239,7 +1238,7 @@
             "keywords": [
                 "database"
             ],
-            "time": "2015-11-15 18:49:48"
+            "time": "2015-11-15T18:49:48+00:00"
         }
     ],
     "packages-dev": [
@@ -1297,7 +1296,7 @@
                 "testing",
                 "unit"
             ],
-            "time": "2016-03-19 14:34:02"
+            "time": "2016-03-19T14:34:02+00:00"
         }
     ],
     "aliases": [],
@@ -1306,7 +1305,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">= 5.6"
+        "php": ">= 7.0"
     },
     "platform-dev": []
 }
