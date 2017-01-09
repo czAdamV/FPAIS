@@ -34,7 +34,7 @@ class SQLTraining extends Training {
     public function getSignedPlayers(): \Nette\Utils\ArrayList {
         if ($this->signedPlayers === NULL) {
             $this->signedPlayers = new \Nette\Utils\ArrayList();
-            foreach ($this->activeRow->related('JoinTrainingToPlayer', 'playerID') as $playerRow) {
+            foreach ($this->activeRow->related('JoinTrainingToPlayer', 'trainingID') as $playerRow) {
                 $this->signedPlayers[] = SQLPlayer::buildFromRow($playerRow);
             }
         }
