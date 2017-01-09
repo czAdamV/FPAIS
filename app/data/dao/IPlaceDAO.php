@@ -13,5 +13,8 @@ namespace FPAIS\Data\DAO;
  * @author viky
  */
 interface IPlaceDAO {
-    //put your code here
+
+    public function findAll(): \Nette\Utils\ArrayList;
+
+    public function findBy(array $by): \Nette\Utils\ArrayList;
 }
